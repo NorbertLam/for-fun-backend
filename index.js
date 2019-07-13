@@ -8,7 +8,7 @@ const client = new Client({
   password: process.env.DB_PW,
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
-  database: process.env.DB
+  database: process.env.DB_DATABASE
 })
 
 client.connect()
@@ -24,6 +24,10 @@ client.connect()
 
 app.get('/', (req, res) => {
   res.send('Hello route')
+})
+
+app.get('/data', (req, res) => {
+  res.send('')
 })
 
 app.listen(3000, () => {
